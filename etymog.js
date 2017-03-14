@@ -5,6 +5,7 @@ var etymog = new Maki(config);
 
 etymog.define('Entry', {
   attributes: {
+    author: { type: String , ref: 'User' },
     text: { type: String , required: true },
     language: { type: String , enum: ['dari', 'english'] },
     translations: [ { type: String , ref: 'Entry' } ],
@@ -20,6 +21,9 @@ etymog.define('Language', {
 });
 
 etymog.define('Family', {
+  names: {
+    
+  },
   attributes: {
     name: { type: String , required: true , slug: true , id: true }
   }
