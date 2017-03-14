@@ -26,9 +26,9 @@ etymog.define('Family', {
 });
 
 etymog.define('User', {
-  attributes: [
+  attributes: {
     username: { type: String , required: true }
-  ]
+  }
 });
 
 etymog.define('Index', {
