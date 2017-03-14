@@ -4,12 +4,12 @@ var Maki = require('maki');
 var etymog = new Maki(config);
 
 etymog.define('Entry', {
-  attributes: [
+  attributes: {
     text: { type: String , required: true },
     language: { type: String , enum: ['dari', 'english'] },
     translations: [ { type: String , ref: 'Entry' } ],
     cognates: [ { type: String , ref: 'Entry' } ],
-  ]
+  }
 });
 
 etymog.define('Language', {
