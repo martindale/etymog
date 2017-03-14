@@ -1,0 +1,27 @@
+{
+  "name": "etymog",
+  "version": "0.0.0",
+  "description": "",
+  "main": "etymog.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/etymog/etymog.git"
+  },
+  "keywords": [
+    "etymology",
+    "translation",
+    "languages"
+  ],
+  "author": "The Etymog Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/etymog/etymog/issues"
+  },
+  "homepage": "https://github.com/etymog/etymog",
+  "dependencies": {
+    "maki": "martindale/maki#0.3"
+  }
+}
