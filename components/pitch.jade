@@ -1,0 +1,20 @@
+dom-module#etymoor-pitch
+  template
+    h1.ui.inverted.header {{pitch}}
+    h2.ui.inverted.header {{mission}}
+    
+    .content.top-padded
+      etymoor-entry-list(src="/entries?sort=random&amp;limit=1")
+  
+  script.
+    Polymer({
+      is: 'etymoor-pitch',
+      properties: {
+        pitch: { type: String },
+        mission: { type: String },
+        cta: { type: Object },
+      },
+      ready: function() {
+        console.log('[MAKI:PITCH]', 'ready');
+      },
+    });

@@ -1,0 +1,14 @@
+dom-module#etymoor-language-creator
+  template
+    form.ui.form#form(action="/languages", method="POST")
+      .field
+        label(for="name") Name
+        input.input(type="text", name="name")
+      .field
+        button.ui.right.floated.green.button(type="submit")
+          i.add.icon
+          | Create
+  script.
+    Polymer({
+      is: 'etymoor-language-creator',
+    });

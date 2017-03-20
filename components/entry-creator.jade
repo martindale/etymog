@@ -1,0 +1,14 @@
+dom-module#etymoor-entry-creator
+  template
+    form.ui.form#form(action="/entries", method="POST")
+      .field
+        label(for="text") Word
+        input.input(type="text", name="text")
+      .field
+        button.ui.right.floated.green.button(type="submit")
+          i.add.icon
+          | Create
+  script.
+    Polymer({
+      is: 'etymoor-entry-creator',
+    });

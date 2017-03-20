@@ -1,0 +1,33 @@
+dom-module#etymoor-language-index
+  template
+    .ui.text.container
+      h2.header
+        span {{data.length}}
+        |  Known Languages
+    .ui.text.container
+      etymoor-language-creator
+      etymoor-language-list(src="/languages")
+  
+  script.
+    Polymer({
+      is: 'etymoor-language-index',
+      properties: {
+        src: { type: String , observer: '_load' },
+        data: { type: Object },
+        state: { type: String },
+        source: { type: String },
+        output: { type: String }
+      },
+      _load: function(uri, back) {
+        var self = this;
+        console.log('[ETYMOG:LANGUAGE-INDEX]', '_load', uri, back);
+        // TODO: use this API instead:
+        // fabric.get(self.src, function(err, data) { ... });
+        $.getJSON(self.src, function(data) {
+          self.data = _.shuffle(data);
+        });
+      },
+      ready: function() {
+        console.log('[ETYMOG:LANGUAGE-INDEX]', 'ready');
+      }
+    });

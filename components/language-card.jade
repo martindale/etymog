@@ -1,0 +1,30 @@
+dom-module#etymoor-language-card
+  template
+    .content
+      .meta
+        .category {{data.family}}
+      a.header(href="{{data.link}}") {{data.name}}
+      .description {{data.definition}}
+    .extra.content
+      pre {{data}}
+  script.
+    Polymer({
+      is: 'etymoor-language-card',
+      properties: {
+        src: { type: String , observer: '_load' },
+        data: { type: Object },
+        state: { type: String },
+        source: { type: String },
+        output: { type: String }
+      },
+      _load: function(uri, back) {
+        var self = this;
+        console.log('[ETYMOOR:ENTRY-CARD]', '_load', uri, back);
+        // TODO: use this API instead:
+        // fabric.get(self.src, function(err, data) { ... });
+        $.getJSON(uri, function(data) {
+          console.log('[ETYMOOR:ENTRY-CARD]', 'retrieved:', data);
+          self.data = data;
+        });
+      }
+    });

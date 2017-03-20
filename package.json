@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/etymog/etymog",
   "dependencies": {
-    "maki": "martindale/maki#0.3"
+    "maki": "martindale/maki#next-now",
+    "maki-cms-local": "0.0.2"
   }
 }

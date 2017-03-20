@@ -1,0 +1,29 @@
+dom-module#etymoor-entry-list
+  template
+    .ui.cards
+      template(is="dom-repeat", items="{{data}}")
+        etymoor-entry-card.ui.card(src$="{{item.link}}")
+
+  script.
+    Polymer({
+      is: 'etymoor-entry-list',
+      properties: {
+        src: { type: String , observer: '_load' },
+        data: { type: Object },
+        state: { type: String },
+        source: { type: String },
+        output: { type: String }
+      },
+      _load: function(uri, back) {
+        var self = this;
+        console.log('[ETYMOOR:ENTRY-LIST]', '_load', uri, back);
+        self.toggleClass('loading', true);
+
+        // TODO: use this API instead:
+        // fabric.get(self.src, function(err, data) { ... });
+        $.getJSON(self.src, function(data) {
+          self.data = _.shuffle(data);
+          self.toggleClass('loading', false);
+        });
+      }
+    });

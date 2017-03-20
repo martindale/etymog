@@ -1,0 +1,25 @@
+dom-module#etymoor-cognate-list
+  template
+    .ui.list
+      template(is="dom-repeat", items="{{data}}")
+        .item {{item}}
+  script.
+    Polymer({
+      is: 'etymoor-cognate-list',
+      properties: {
+        src: { type: String , observer: '_load' },
+        data: { type: Object },
+        state: { type: String },
+        source: { type: String },
+        output: { type: String }
+      },
+      _load: function(uri, back) {
+        var self = this;
+        console.log('[ETYMOOR:COGNATE-LIST]', '_load', uri, back);
+        // TODO: use this API instead:
+        // fabric.get(self.src, function(err, data) { ... });
+        $.getJSON(self.src, function(data) {
+          self.data = _.shuffle(data);
+        });
+      }
+    });
