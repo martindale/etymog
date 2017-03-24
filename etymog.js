@@ -38,6 +38,7 @@ etymoor.define('Language', {
 });
 
 etymoor.define('Family', {
+  //public: false,
   attributes: {
     name: { type: String , required: true , slug: true , id: true }
   }
