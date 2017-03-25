@@ -1,0 +1,34 @@
+dom-module#etymoor-entry-index
+  template
+    .ui.text.container
+      h2.header
+        span {{data.length}}
+        |  Words in the Dictionary
+    .ui.text.container
+      etymoor-entry-creator
+      etymoor-entry-list(src="/entries")
+  
+  script.
+    Polymer({
+      is: 'etymoor-entry-index',
+      properties: {
+        src: { type: String , observer: '_load' },
+        data: { type: Object },
+        state: { type: String },
+        source: { type: String },
+        output: { type: String }
+      },
+      _load: function(uri, back) {
+        var self = this;
+        console.log('[ETYMOG:ENTRY-INDEX]', '_load', uri, back);
+        // TODO: use this API instead:
+        // fabric.get(self.src, function(err, data) { ... });
+        $.getJSON(self.src, function(data) {
+          self.data = _.shuffle(data);
+        });
+
+      },
+      ready: function() {
+        console.log('[ETYMOG:ENTRY-INDEX]', 'ready');
+      }
+    });

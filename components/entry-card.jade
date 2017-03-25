@@ -1,0 +1,37 @@
+dom-module#etymoor-entry-card
+  template
+    .content
+      a.header(href="{{data.link}}") {{data.text}}
+      .meta
+        .right.floated.time {{data.created}}
+        .category
+          span {{data.language}}
+          |  &middot; 
+          span {{data.pronunciation}}
+      .description
+        p {{data.definition}}
+        h4.header Cognates
+        etymoor-cognate-list(src="{{data.link}}/cognates")
+    .extra.content
+      pre {{data}}
+  script.
+    Polymer({
+      is: 'etymoor-entry-card',
+      properties: {
+        src: { type: String , observer: '_load' },
+        data: { type: Object },
+        state: { type: String },
+        source: { type: String },
+        output: { type: String }
+      },
+      _load: function(uri, back) {
+        var self = this;
+        console.log('[ETYMOOR:ENTRY-CARD]', '_load', uri, back);
+        // TODO: use this API instead:
+        // fabric.get(self.src, function(err, data) { ... });
+        $.getJSON(uri, function(data) {
+          console.log('[ETYMOOR:ENTRY-CARD]', 'retrieved:', data);
+          self.data = data;
+        });
+      }
+    });
