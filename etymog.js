@@ -1,7 +1,7 @@
 var config = require('./config');
 
 var Maki = require('maki');
-var etymoor = new Maki(config);
+var etymog = new Maki(config);
 
 var CMS = require('maki-cms-local');
 var cms = new CMS({
@@ -9,7 +9,7 @@ var cms = new CMS({
   //view: process.env.PWD + '/views/page'
 });
 
-etymoor.define('Entry', {
+etymog.define('Entry', {
   attributes: {
     text: { type: String , required: true },
     language: { type: String , ref: 'language' },
@@ -21,30 +21,30 @@ etymoor.define('Entry', {
     created: { type: Date , required: true , default: Date.now },
   },
   components: {
-    query: 'etymoor-entry-index',
-    get: 'etymoor-entry-view'
+    query: 'etymog-entry-index',
+    get: 'etymog-entry-view'
   }
 });
 
-etymoor.define('Language', {
+etymog.define('Language', {
   attributes: {
     name: { type: String , required: true , slug: true , id: true },
     family: { type: String , ref: 'Family' }
   },
   components: {
-    query: 'etymoor-language-index',
-    get: 'etymoor-language-view',
+    query: 'etymog-language-index',
+    get: 'etymog-language-view',
   }
 });
 
-etymoor.define('Family', {
+etymog.define('Family', {
   //public: false,
   attributes: {
     name: { type: String , required: true , slug: true , id: true }
   }
 });
 
-etymoor.define('People', {
+etymog.define('People', {
   attributes: {
     username: { type: String , required: true }
   },
@@ -53,19 +53,19 @@ etymoor.define('People', {
   }
 });
 
-etymoor.define('Index', {
+etymog.define('Index', {
   public: false,
   name: 'Index',
   templates: {
     query: 'splash'
   },
   components: {
-    masthead: 'etymoor-pitch',
-    query: 'etymoor-splash'
+    masthead: 'etymog-pitch',
+    query: 'etymog-splash'
   },
   routes: {
     query: '/'
   }
 });
 
-etymoor.start();
+etymog.start();

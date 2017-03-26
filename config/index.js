@@ -1,7 +1,7 @@
 module.exports = {
   service: {
-    name: 'etymoor' ,
-    namespace: 'etymoor' ,
+    name: 'etymog' ,
+    namespace: 'etymog' ,
     pitch: 'the world\'s dictionary',
     mission: 'a community-built resource for your etymological research',
     description: 'Maki allows you to focus on your project, rather than laboring over architecture decisions.  With true isomorphism, you control how your application behaves, and can then customize how your features are exposed on specific platforms.',
@@ -13,7 +13,7 @@ module.exports = {
     source: 'https://github.com/etymog/etymog'
   },
   database: {
-    name: 'etymoor'
+    name: 'etymog'
   },
   services: {
     http: {

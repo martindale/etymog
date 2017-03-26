@@ -1,14 +1,14 @@
-dom-module#etymoor-pitch
+dom-module#etymog-pitch
   template
     h1.ui.inverted.header {{pitch}}
     h2.ui.inverted.header {{mission}}
     
     .content.top-padded
-      etymoor-entry-list(src="/entries?sort=random&amp;limit=1")
+      etymog-entry-list(src="/entries?sort=random&amp;limit=1")
   
   script.
     Polymer({
-      is: 'etymoor-pitch',
+      is: 'etymog-pitch',
       properties: {
         pitch: { type: String },
         mission: { type: String },

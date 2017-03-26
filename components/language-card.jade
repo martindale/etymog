@@ -1,4 +1,4 @@
-dom-module#etymoor-language-card
+dom-module#etymog-language-card
   template
     .content
       .meta
@@ -9,7 +9,7 @@ dom-module#etymoor-language-card
       pre {{data}}
   script.
     Polymer({
-      is: 'etymoor-language-card',
+      is: 'etymog-language-card',
       properties: {
         src: { type: String , observer: '_load' },
         data: { type: Object },
@@ -19,11 +19,11 @@ dom-module#etymoor-language-card
       },
       _load: function(uri, back) {
         var self = this;
-        console.log('[ETYMOOR:ENTRY-CARD]', '_load', uri, back);
+        console.log('[etymog:ENTRY-CARD]', '_load', uri, back);
         // TODO: use this API instead:
         // fabric.get(self.src, function(err, data) { ... });
         $.getJSON(uri, function(data) {
-          console.log('[ETYMOOR:ENTRY-CARD]', 'retrieved:', data);
+          console.log('[etymog:ENTRY-CARD]', 'retrieved:', data);
           self.data = data;
         });
       }

@@ -1,16 +1,16 @@
-dom-module#etymoor-entry-index
+dom-module#etymog-entry-index
   template
     .ui.text.container
       h2.header
         span {{data.length}}
         |  Words in the Dictionary
     .ui.text.container
-      etymoor-entry-creator
-      etymoor-entry-list(src="/entries")
+      etymog-entry-creator
+      etymog-entry-list(src="/entries")
   
   script.
     Polymer({
-      is: 'etymoor-entry-index',
+      is: 'etymog-entry-index',
       properties: {
         src: { type: String , observer: '_load' },
         data: { type: Object },

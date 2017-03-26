@@ -1,16 +1,16 @@
-dom-module#etymoor-language-index
+dom-module#etymog-language-index
   template
     .ui.text.container
       h2.header
         span {{data.length}}
         |  Known Languages
     .ui.text.container
-      etymoor-language-creator
-      etymoor-language-list(src="/languages")
+      etymog-language-creator
+      etymog-language-list(src="/languages")
   
   script.
     Polymer({
-      is: 'etymoor-language-index',
+      is: 'etymog-language-index',
       properties: {
         src: { type: String , observer: '_load' },
         data: { type: Object },
