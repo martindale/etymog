@@ -23,6 +23,7 @@
   "homepage": "https://github.com/etymog/etymog",
   "dependencies": {
     "maki": "martindale/maki#search",
+    "maki-client-search": "martindale/maki-client-search",
     "maki-cms-local": "0.0.2"
   }
 }

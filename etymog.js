@@ -3,6 +3,8 @@ var config = require('./config');
 var Maki = require('maki');
 var etymog = new Maki(config);
 
+etymog.use(require('maki-client-search'));
+
 var CMS = require('maki-cms-local');
 var cms = new CMS({
   path: '/pages',
