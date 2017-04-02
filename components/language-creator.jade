@@ -5,10 +5,24 @@ dom-module#etymog-language-creator
         label(for="name") Name
         input.input(type="text", name="name")
       .field
+        label(for="family") Family
+        .ui.fluid.search.selection.dropdown
+          input.input(type="hidden", name="family")
+          i.dropdown.icon
+          .default.text Language
+          .menu
+            .item(data-value="indo-european") Indo-European
+      //-.field
+        label(for="family.date") Timeline
+        input.input(type="text", name="family.date")
+      .field
         button.ui.right.floated.green.button(type="submit")
           i.add.icon
           | Create
   script.
     Polymer({
       is: 'etymog-language-creator',
+      attached: function() {
+        $('.dropdown').dropdown();
+      }
     });

@@ -2,8 +2,25 @@ dom-module#etymog-entry-creator
   template
     form.ui.form#form(action="/entries", method="POST")
       .field
-        label(for="text") Word
-        input.input(type="text", name="text")
+        label(for="word") Word
+        input.input(type="text", name="word")
+      .field
+        label(for="language") Language
+        .ui.fluid.search.selection.dropdown
+          input.input(type="hidden", name="language")
+          i.dropdown.icon
+          .default.text Language
+          .menu
+            .item(data-value="avestan") Avestan
+            .item(data-value="english") English
+            .item(data-value="pashto") Pashto
+            .item(data-value="protogermanic") Proto-Germanic
+      .field
+        label(for="definitions") Definitions
+        input.input(type="text", name="definitions")
+      .field
+        label(for="explanation") Explanation
+        input.input(type="text", name="explanation")
       .field
         button.ui.right.floated.green.button(type="submit")
           i.add.icon
@@ -11,4 +28,7 @@ dom-module#etymog-entry-creator
   script.
     Polymer({
       is: 'etymog-entry-creator',
+      attached: function() {
+        $('.dropdown').dropdown();
+      }
     });

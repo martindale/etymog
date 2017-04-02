@@ -1,7 +1,7 @@
 dom-module#etymog-entry-card
   template
     .content
-      a.header(href="{{data.link}}") {{data.text}}
+      a.header(href="{{data.link}}") {{data.word}}
       .meta
         .right.floated.time {{data.created}}
         .category
@@ -10,10 +10,14 @@ dom-module#etymog-entry-card
           span {{data.pronunciation}}
       .description
         p {{data.definition}}
-        h4.header Cognates
-        etymog-cognate-list(src="{{data.link}}/cognates")
-    .extra.content
-      pre {{data}}
+        h4.header Translations
+        p {{data.translations}}
+        h4.header Definitions
+        p {{data.definitions}}
+        h4.header Explanation
+        p {{data.explanation}}
+        h4.header Ancestors
+        p {{data.ancestors}}
   script.
     Polymer({
       is: 'etymog-entry-card',
@@ -31,6 +35,7 @@ dom-module#etymog-entry-card
         // fabric.get(self.src, function(err, data) { ... });
         $.getJSON(uri, function(data) {
           console.log('[etymog:ENTRY-CARD]', 'retrieved:', data);
+          data.raw = JSON.stringify(data, '  ');
           self.data = data;
         });
       }

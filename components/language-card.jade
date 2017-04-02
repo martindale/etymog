@@ -4,7 +4,12 @@ dom-module#etymog-language-card
       .meta
         .category {{data.family}}
       a.header(href="{{data.link}}") {{data.name}}
-      .description {{data.definition}}
+      .description
+        h4.header Language Family 
+          p {{data.family}}
+        h4.header Language Timeline
+          p {{data.family}}
+      
     .extra.content
       pre {{data}}
   script.
