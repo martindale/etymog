@@ -1,0 +1,20 @@
+dom-module#etymog-family-creator
+  template
+    form.ui.form#form(action="/families", method="POST")
+      .field
+        label(for="name") Family Name
+        input.input(type="text", name="name")
+      .field
+        label(for="date[start]") Timelne Start
+        input.input(type="text", name="start")
+      .field
+        button.ui.right.floated.green.button(type="submit")
+          i.add.icon
+          | Create
+  script.
+    Polymer({
+      is: 'etymog-family-creator',
+      attached: function() {
+        $('.dropdown').dropdown();
+      }
+    });
