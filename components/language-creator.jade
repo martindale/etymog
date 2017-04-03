@@ -6,12 +6,7 @@ dom-module#etymog-language-creator
         input.input(type="text", name="name")
       .field
         label(for="family") Family
-        .ui.fluid.search.selection.dropdown
-          input.input(type="hidden", name="family")
-          i.dropdown.icon
-          .default.text Language
-          .menu
-            .item(data-value="indo-european") Indo-European
+          maki-dropdown(src="/families")
       //-.field
         label(for="family.date") Timeline
         input.input(type="text", name="family.date")
