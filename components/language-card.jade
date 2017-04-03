@@ -2,13 +2,12 @@ dom-module#etymog-language-card
   template
     .content
       .meta
-        .category {{data.family}}
       a.header(href="{{data.link}}") {{data.name}}
       .description
         h4.header Language Family 
-          p {{data.family}}
+        p {{data.family}}
         h4.header Language Timeline
-          p {{data.family}}
+        p {{data.date.start}}
       
     .extra.content
       pre {{data}}
