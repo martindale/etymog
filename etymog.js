@@ -34,7 +34,7 @@ etymog.define('Entry', {
 etymog.define('Language', {
   attributes: {
     name: { type: String , slug: true , id: true },
-    family: { type: String , ref: 'Family' , populate: ['query', 'get'] }
+    family: { type: String , ref: 'Family' }
   },
   components: {
     query: 'etymog-language-index',
