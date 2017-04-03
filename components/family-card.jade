@@ -1,19 +1,20 @@
-dom-module#etymog-language-card
+dom-module#etymog-family-card
   template
     .content
-      .meta
       a.header(href="{{data.link}}") {{data.name}}
+      .meta
+        .right.floated.time {{data.created}}
+        .category
+          span {{data.name}}
+          |  &middot;
+          span {{data.name}}
       .description
-        h4.header Language Family 
-        p {{data.family}}
-        h4.header Language Timeline
-        p {{data.date.start}}
-      
-    .extra.content
-      pre {{data}}
+        p {{data.date}}
+        h4.header Timeline
+        p {{data.start}}
   script.
     Polymer({
-      is: 'etymog-language-card',
+      is: 'etymog-family-card',
       properties: {
         src: { type: String , observer: '_load' },
         data: { type: Object },
@@ -23,11 +24,12 @@ dom-module#etymog-language-card
       },
       _load: function(uri, back) {
         var self = this;
-        console.log('[etymog:ENTRY-CARD]', '_load', uri, back);
+        console.log('[etymog:FAMILY-CARD]', '_load', uri, back);
         // TODO: use this API instead:
         // fabric.get(self.src, function(err, data) { ... });
         $.getJSON(uri, function(data) {
-          console.log('[etymog:ENTRY-CARD]', 'retrieved:', data);
+          console.log('[etymog:FAMILY-CARD]', 'retrieved:', data);
+          data.raw = JSON.stringify(data, '  ');
           self.data = data;
         });
       }

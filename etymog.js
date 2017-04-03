@@ -43,14 +43,18 @@ etymog.define('Language', {
 });
 
 etymog.define('Family', {
-  public: false,
+  // public: false,
   attributes: {
     name: { type: String , required: true , slug: true , id: true },
     date: {
-      start: { type: Date },
-      end: { type: Date }
+      start: { type: String },
+      end: { type: String }
+    },
+  },
+    components: {
+      query: 'etymog-family-index',
+      get: 'etymog-family-view',
     }
-  }
 });
 
 etymog.define('People', {

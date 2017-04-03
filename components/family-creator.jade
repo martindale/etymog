@@ -1,14 +1,11 @@
-dom-module#etymog-language-creator
+dom-module#etymog-family-creator
   template
-    form.ui.form#form(action="/languages", method="POST")
+    form.ui.form#form(action="/families", method="POST")
       .field
-        label(for="name") Name
+        label(for="name") Family Name
         input.input(type="text", name="name")
       .field
-        label(for="family") Family
-        maki-dropdown(src="/families")
-      .field
-        label(for="date[start]") Timeline Start
+        label(for="date[start]") Timelne Start
         input.input(type="text", name="start")
       .field
         button.ui.right.floated.green.button(type="submit")
@@ -16,7 +13,7 @@ dom-module#etymog-language-creator
           | Create
   script.
     Polymer({
-      is: 'etymog-language-creator',
+      is: 'etymog-family-creator',
       attached: function() {
         $('.dropdown').dropdown();
       }

@@ -1,0 +1,26 @@
+dom-module#etymog-family-view
+  template
+    .ui.text.container
+      etymog-family-card.ui.fluid.card(src="{{data.link}}")
+  script.
+    Polymer({
+      is: 'etymog-family-view',
+      properties: {
+        src: { type: String , observer: '_load' },
+        data: { type: Object },
+        state: { type: String },
+        source: { type: String },
+        output: { type: String }
+      },
+      _load: function(uri, back) {
+        var self = this;
+        console.log('[ETYMOG:FAMILY-VIEW]', '_load', uri, back);
+        self.toggleClass('loading', true);
+
+        // TODO: use this API instead:
+        // fabric.get(self.src, function(err, data) { ... });
+        $.getJSON(self.src, function(data) {
+          self.data = data;
+        });
+      }
+    });
