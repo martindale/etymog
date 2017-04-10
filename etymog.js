@@ -46,10 +46,7 @@ etymog.define('Family', {
   // public: false,
   attributes: {
     name: { type: String , required: true , slug: true , id: true },
-    date: {
-      start: { type: String },
-      end: { type: String }
-    },
+    parent: { type: String , required: false },
   },
     components: {
       query: 'etymog-family-index',

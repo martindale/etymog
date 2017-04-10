@@ -3,15 +3,15 @@ dom-module#etymog-family-card
     .content
       a.header(href="{{data.link}}") {{data.name}}
       .meta
-        .right.floated.time {{data.created}}
+        .right.floated.time
         .category
           span {{data.name}}
           |  &middot;
           span {{data.name}}
       .description
         p {{data.date}}
-        h4.header Timeline
-        p {{data.start}}
+        h4.header Parent Family
+        p {{data.parent}}
   script.
     Polymer({
       is: 'etymog-family-card',
