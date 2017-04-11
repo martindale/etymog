@@ -5,10 +5,8 @@ dom-module#etymog-language-card
       a.header(href="{{data.link}}") {{data.name}}
       .description
         h4.header Language Family 
-        p {{data.family}}
-        h4.header Language Timeline
-        p {{data.date.start}}
-      
+        a(href="{{data.family}}"){{data.family}}
+    
     .extra.content
       pre {{data}}
   script.
