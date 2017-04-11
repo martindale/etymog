@@ -16,7 +16,7 @@ var cms = new CMS({
 etymog.define('Entry', {
   attributes: {
     word: { type: String , required: true },
-    language: { type: String , ref: 'language' },
+    language: { type: String , ref: 'Language' },
     definitions: [ { type: String } ],
     explanation: [ { type: String } ],
     pronunciations: [ { type: String } ],
@@ -34,24 +34,12 @@ etymog.define('Entry', {
 etymog.define('Language', {
   attributes: {
     name: { type: String , slug: true , id: true },
-    family: { type: String , ref: 'Family' }
+    family: { type: String , ref: 'Language' }
   },
   components: {
     query: 'etymog-language-index',
     get: 'etymog-language-view',
   }
-});
-
-etymog.define('Family', {
-  // public: false,
-  attributes: {
-    name: { type: String , required: true , slug: true , id: true },
-    parent: { type: String , required: false },
-  },
-    components: {
-      query: 'etymog-family-index',
-      get: 'etymog-family-view',
-    }
 });
 
 etymog.define('People', {
