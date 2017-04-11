@@ -6,15 +6,7 @@ dom-module#etymog-entry-creator
         input.input(type="text", name="word")
       .field
         label(for="language") Language
-        .ui.fluid.search.selection.dropdown
-          input.input(type="hidden", name="language")
-          i.dropdown.icon
-          .default.text Language
-          .menu
-            .item(data-value="avestan") Avestan
-            .item(data-value="english") English
-            .item(data-value="pashto") Pashto
-            .item(data-value="protogermanic") Proto-Germanic
+        maki-dropdown(src="/languages")
       .field
         label(for="definitions") Definitions
         input.input(type="text", name="definitions")
