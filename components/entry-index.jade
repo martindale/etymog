@@ -5,7 +5,9 @@ dom-module#etymog-entry-index
         span {{data.length}}
         |  Words in the Dictionary
     .ui.text.container
-      etymog-entry-creator
+      .ui.card
+        .content
+          etymog-entry-creator
       etymog-entry-list(src="/entries")
   
   script.

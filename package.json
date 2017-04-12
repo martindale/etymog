@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/etymog/etymog",
   "dependencies": {
-    "maki": "martindale/maki#search",
+    "maki": "github:martindale/maki#next-now",
+    "maki-client-level": "git://github.com/martindale/maki-client-level.git",
+    "maki-client-markdown": "git://github.com/martindale/maki-client-markdown.git",
+    "maki-client-polymer": "git://github.com/martindale/maki-client-polymer.git",
     "maki-client-search": "martindale/maki-client-search",
     "maki-cms-local": "0.0.2"
   }

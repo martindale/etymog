@@ -5,10 +5,16 @@ dom-module#etymog-language-creator
         label(for="name") Name
         input.input(type="text", name="name")
       .field
+        label(for="family") Family (parent) Language
+        maki-dropdown(src="/languages")
+      .field
         button.ui.right.floated.green.button(type="submit")
           i.add.icon
           | Create
   script.
     Polymer({
       is: 'etymog-language-creator',
+      attached: function() {
+        $('.dropdown').dropdown();
+      }
     });
