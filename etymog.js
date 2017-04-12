@@ -3,6 +3,10 @@ var config = require('./config');
 var Maki = require('maki');
 var etymog = new Maki(config);
 
+etymog.use(require('maki-client-level'));
+etymog.use(require('maki-client-polymer'));
+etymog.use(require('maki-client-markdown'));
+
 var CMS = require('maki-cms-local');
 var cms = new CMS({
   path: '/pages',
@@ -11,12 +15,13 @@ var cms = new CMS({
 
 etymog.define('Entry', {
   attributes: {
-    text: { type: String , required: true },
-    language: { type: String , ref: 'language' },
-    definition: { type: String },
-    pronunciation: { type: String },
+    word: { type: String , required: true },
+    root: { type: String , ref: 'Entry' },
+    language: { type: String , ref: 'Language' },
+    definitions: [ { type: String } ],
+    explanation: [ { type: String } ],
+    pronunciations: [ { type: String } ],
     translations: [ { type: String , ref: 'Entry' } ],
-    cognates: [ { type: String , ref: 'Entry' } ],
     author: { type: String , ref: 'User' },
     created: { type: Date , required: true , default: Date.now },
   },
@@ -28,19 +33,12 @@ etymog.define('Entry', {
 
 etymog.define('Language', {
   attributes: {
-    name: { type: String , required: true , slug: true , id: true },
-    family: { type: String , ref: 'Family' }
+    name: { type: String , slug: true , id: true },
+    family: { type: String , ref: 'Language' }
   },
   components: {
     query: 'etymog-language-index',
     get: 'etymog-language-view',
-  }
-});
-
-etymog.define('Family', {
-  //public: false,
-  attributes: {
-    name: { type: String , required: true , slug: true , id: true }
   }
 });
 

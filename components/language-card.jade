@@ -2,9 +2,11 @@ dom-module#etymog-language-card
   template
     .content
       .meta
-        .category {{data.family}}
       a.header(href="{{data.link}}") {{data.name}}
-      .description {{data.definition}}
+      .description
+        h4.header Language Family 
+        a(href="{{data.family}}"){{data.family}}
+    
     .extra.content
       pre {{data}}
   script.

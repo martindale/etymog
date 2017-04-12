@@ -2,13 +2,21 @@ dom-module#etymog-entry-creator
   template
     form.ui.form#form(action="/entries", method="POST")
       .field
-        label(for="text") Word
-        input.input(type="text", name="text")
+        label(for="word") Word
+        input.input(type="text", name="word")
+      .field
+        label(for="root") Root
+        input.input(type="text", name="root")
+      .field
+        label(for="language") Language
+        maki-dropdown(src="/languages")
+      .field
+        label(for="definitions") Definitions
+        input.input(type="text", name="definitions")
+      .field
+        label(for="explanation") Explanation
+        input.input(type="text", name="explanation")
       .field
         button.ui.right.floated.green.button(type="submit")
           i.add.icon
           | Create
-  script.
-    Polymer({
-      is: 'etymog-entry-creator',
-    });
