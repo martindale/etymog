@@ -10,14 +10,13 @@ dom-module#etymog-entry-card
           span {{data.pronunciation}}
       .description
         p {{data.definition}}
-        h4.header Translations
-        p {{data.translations}}
+        h4.header Root Word
+        a(href="{{data.root}}") {{data.root}}
         h4.header Definitions
         p {{data.definitions}}
         h4.header Explanation
         p {{data.explanation}}
-        h4.header Ancestors
-        p {{data.ancestors}}
+
   script.
     Polymer({
       is: 'etymog-entry-card',

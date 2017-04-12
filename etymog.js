@@ -16,12 +16,12 @@ var cms = new CMS({
 etymog.define('Entry', {
   attributes: {
     word: { type: String , required: true },
+    root: { type: String , ref: 'Entry' },
     language: { type: String , ref: 'Language' },
     definitions: [ { type: String } ],
     explanation: [ { type: String } ],
     pronunciations: [ { type: String } ],
     translations: [ { type: String , ref: 'Entry' } ],
-    ancestors: [ { type: String , ref: 'Entry' } ],
     author: { type: String , ref: 'User' },
     created: { type: Date , required: true , default: Date.now },
   },
