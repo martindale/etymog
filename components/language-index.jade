@@ -1,13 +1,16 @@
 dom-module#etymog-language-index
   template
-    .ui.text.container
-      h2.header
-        span {{data.length}}
-        |  Known Languages
-    .ui.text.container
-      etymog-language-list(src="/languages")
-      .ui.divider
-      etymog-language-creator
+    .ui.vertical.stripe.segment.content
+      .ui.text.container
+        h2.ui.horizontal.header.divider
+          span {{data.length}}
+          |  Known Languages
+      .ui.text.container
+        etymog-language-list(src="/languages")
+        .ui.divider
+        h4.ui.horizontal.header Are we missing something?  Add it now!
+        .ui.segment
+          etymog-language-creator
 
   script.
     Polymer({
