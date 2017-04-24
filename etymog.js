@@ -3,6 +3,7 @@ var config = require('./config');
 var Maki = require('maki');
 var etymog = new Maki(config);
 
+etymog.use(require('maki-client-search'));
 etymog.use(require('maki-client-level'));
 etymog.use(require('maki-client-polymer'));
 etymog.use(require('maki-client-markdown'));
