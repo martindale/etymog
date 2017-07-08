@@ -1,14 +1,15 @@
 dom-module#etymog-entry-index
   template
-    .ui.text.container
-      h2.header
-        span {{data.length}}
-        |  Words in the Dictionary
-    .ui.text.container
-      .ui.card
-        .content
-          etymog-entry-creator
-      etymog-entry-list(src="/entries")
+    .ui.vertical.stripe.segment.content
+      .ui.text.container
+        h2.ui.horizontal.header.divider
+          span {{data.length}}
+          |  Words in the Dictionary
+      .ui.centered.text.container
+        .ui.card
+          .content
+            etymog-entry-creator
+        etymog-entry-list(src="/entries")
   
   script.
     Polymer({
